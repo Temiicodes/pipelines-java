@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: MyPcAgent
+pool: CICDagent
 
 steps:
 - task: Maven@3
