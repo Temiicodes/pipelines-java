@@ -19,7 +19,7 @@ steps:
     mavenVersion: '3.9.6'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
-    sonarQubeRunAnalysis: true
+    sonarQubeRunAnalysis: false
 
 - task: DownloadBuildArtifacts@1
   inputs:
