@@ -8,7 +8,16 @@
   <name>Hello world sample web app</name>
   <url>http://maven.apache.org</url>
 
+  <!-- Add Repository for Jacoco -->
+  <repositories>
+    <repository>
+      <id>bintray</id>
+      <url>https://plugins.gradle.org/m2/</url>
+    </repository>
+  </repositories>
+
   <dependencies>
+    <!-- Add JUnit dependency -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -23,7 +32,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.2</version>
+        <version>0.8.7</version> <!-- Update to latest version -->
         <executions>
           <execution>
             <id>prepare-agent</id>
@@ -33,7 +42,7 @@
           </execution>
           <execution>
             <id>report</id>
-            <phase>test</phase>
+            <phase>verify</phase> <!-- Change phase to verify -->
             <goals>
               <goal>report</goal>
             </goals>
@@ -47,5 +56,4 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-	
 </project>
