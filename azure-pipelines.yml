@@ -6,17 +6,18 @@
 trigger:
 - main
 
-pool: Default
+pool:
+  vmImage: 'windows-latest'
 
 steps:
-
-- task: Maven@4
+- task: Maven@3
   inputs:
-    mavenPomFile: 'pom.xml'
+    goals: 'clean install'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
+    mavenVersionOption: 'UserSpecified'
+    mavenVersion: '3.9.6'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: true
