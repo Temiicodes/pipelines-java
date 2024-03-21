@@ -21,8 +21,7 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
 
-- task: DownloadBuildArtifacts@1
+- task: DownloadPipelineArtifact@2
   inputs:
     buildType: 'current'
-    downloadType: 'single'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    targetPath: '$(Pipeline.Workspace)'
